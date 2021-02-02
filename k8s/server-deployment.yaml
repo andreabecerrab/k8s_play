@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: client
-          image: stephengrider/multi-server
+          image: andreabecerra/multi-server
           ports:
             - containerPort: 5000
-          env: 
+          env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
@@ -33,5 +33,5 @@ spec:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: pgpassword 
+                  name: pgpassword
                   key: PGPASSWORD
